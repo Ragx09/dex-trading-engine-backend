@@ -1,0 +1,155 @@
+[2026-01-10T08:22:45.704Z] Connection attempt
+[2026-01-10T08:22:45.717Z] Socket extracted
+[2026-01-10T08:22:45.718Z] Error in WS handler: TypeError: Cannot read properties of undefined (reading 'on')
+[2026-01-10T08:23:33.930Z] Connection attempt. Keys: _events,_eventsCount,_maxListeners,_binaryType,_closeCode,_closeFrameReceived,_closeFrameSent,_closeMessage,_closeTimer,_errorEmitted,_extensions,_paused,_protocol,_readyState,_receiver,_sender,_socket,_autoPong,_closeTimeout,_isServer
+[2026-01-10T08:23:33.932Z] Socket resolved: true
+[2026-01-10T09:04:34.177Z] Order failed: column "order_type" of relation "orders" does not exist
+Stack: error: column "order_type" of relation "orders" does not exist
+    at D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async query (D:\Ragx\Eternal_Backend\dex-trading-engine\src\config\database.ts:22:21)
+    at async WebSocket.<anonymous> (D:\Ragx\Eternal_Backend\dex-trading-engine\src\routes\orders.ts:45:21)
+[2026-01-10T09:17:02.251Z] Order failed: column "order_type" of relation "orders" does not exist
+Stack: error: column "order_type" of relation "orders" does not exist
+    at D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async query (D:\Ragx\Eternal_Backend\dex-trading-engine\src\config\database.ts:22:21)
+    at async WebSocket.<anonymous> (D:\Ragx\Eternal_Backend\dex-trading-engine\src\routes\orders.ts:45:21)
+[2026-01-10T10:25:21.755Z] Order failed: null value in column "type" of relation "orders" violates not-null constraint
+Stack: error: null value in column "type" of relation "orders" violates not-null constraint
+    at D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async query (D:\Ragx\Eternal_Backend\dex-trading-engine\src\config\database.ts:22:21)
+    at async WebSocket.<anonymous> (D:\Ragx\Eternal_Backend\dex-trading-engine\src\routes\orders.ts:45:21)
+[2026-01-10T10:28:30.398Z] Order failed: null value in column "slippage" of relation "orders" violates not-null constraint
+Stack: error: null value in column "slippage" of relation "orders" violates not-null constraint
+    at D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async query (D:\Ragx\Eternal_Backend\dex-trading-engine\src\config\database.ts:22:21)
+    at async WebSocket.<anonymous> (D:\Ragx\Eternal_Backend\dex-trading-engine\src\routes\orders.ts:45:21)
+[2026-01-10T10:28:50.848Z] Order failed: null value in column "slippage" of relation "orders" violates not-null constraint
+Stack: error: null value in column "slippage" of relation "orders" violates not-null constraint
+    at D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async query (D:\Ragx\Eternal_Backend\dex-trading-engine\src\config\database.ts:22:21)
+    at async WebSocket.<anonymous> (D:\Ragx\Eternal_Backend\dex-trading-engine\src\routes\orders.ts:45:21)
+[2026-01-10T10:30:16.033Z] Order failed: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+Stack: SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+    at JSON.parse (<anonymous>)
+    at WebSocket.<anonymous> (D:\Ragx\Eternal_Backend\dex-trading-engine\src\routes\orders.ts:24:39)
+    at WebSocket.emit (node:events:508:28)
+    at WebSocket.emit (node:domain:489:12)
+    at Receiver.receiverOnMessage (D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\ws\lib\websocket.js:1225:20)
+    at Receiver.emit (node:events:508:28)
+    at Receiver.emit (node:domain:489:12)
+    at Receiver.dataMessage (D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\ws\lib\receiver.js:596:14)
+    at Receiver.getData (D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\ws\lib\receiver.js:496:10)
+    at Receiver.startLoop (D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\ws\lib\receiver.js:167:16)
+[2026-01-10T10:34:52.987Z] Worker processing order: ord_14SyN1YPem-g_rZQ
+[2026-01-10T10:34:55.561Z] Worker error for ord_14SyN1YPem-g_rZQ: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T10:34:56.595Z] Worker processing order: ord_14SyN1YPem-g_rZQ
+[2026-01-10T10:34:59.263Z] Worker error for ord_14SyN1YPem-g_rZQ: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T10:35:01.325Z] Worker processing order: ord_14SyN1YPem-g_rZQ
+[2026-01-10T10:35:03.979Z] Worker error for ord_14SyN1YPem-g_rZQ: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T14:50:20.388Z] Worker processing order: ord_ukfSA4ZyQsh-pjeU
+[2026-01-10T14:50:23.130Z] Worker error for ord_ukfSA4ZyQsh-pjeU: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T14:50:24.176Z] Worker processing order: ord_ukfSA4ZyQsh-pjeU
+[2026-01-10T14:50:27.253Z] Worker error for ord_ukfSA4ZyQsh-pjeU: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T14:50:29.344Z] Worker processing order: ord_ukfSA4ZyQsh-pjeU
+[2026-01-10T14:50:31.679Z] Worker error for ord_ukfSA4ZyQsh-pjeU: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T14:54:03.388Z] Worker processing order: ord_irul7cpZVuNknZ4T
+[2026-01-10T14:54:06.580Z] Worker error for ord_irul7cpZVuNknZ4T: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T14:54:07.600Z] Worker processing order: ord_irul7cpZVuNknZ4T
+[2026-01-10T14:54:10.587Z] Worker error for ord_irul7cpZVuNknZ4T: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T14:54:12.646Z] Worker processing order: ord_irul7cpZVuNknZ4T
+[2026-01-10T14:54:15.053Z] Worker error for ord_irul7cpZVuNknZ4T: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T16:45:40.779Z] Worker processing order: ord_zYdeVoz8np39O9Ch
+[2026-01-10T16:45:43.817Z] Worker error for ord_zYdeVoz8np39O9Ch: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T16:45:44.824Z] Worker processing order: ord_zYdeVoz8np39O9Ch
+[2026-01-10T16:45:47.714Z] Worker error for ord_zYdeVoz8np39O9Ch: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T16:45:49.767Z] Worker processing order: ord_zYdeVoz8np39O9Ch
+[2026-01-10T16:45:52.352Z] Worker error for ord_zYdeVoz8np39O9Ch: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T16:59:09.620Z] Worker processing order: ord_rZNsPw9pgc4o1fRK
+[2026-01-10T16:59:12.855Z] Worker error for ord_rZNsPw9pgc4o1fRK: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T16:59:13.903Z] Worker processing order: ord_rZNsPw9pgc4o1fRK
+[2026-01-10T16:59:17.111Z] Worker error for ord_rZNsPw9pgc4o1fRK: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T16:59:19.161Z] Worker processing order: ord_rZNsPw9pgc4o1fRK
+[2026-01-10T16:59:20.248Z] Worker processing order: ord_VGKmeFQLARLdi5ax
+[2026-01-10T16:59:21.915Z] Worker error for ord_rZNsPw9pgc4o1fRK: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T16:59:23.201Z] Worker error for ord_VGKmeFQLARLdi5ax: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T16:59:24.217Z] Worker processing order: ord_VGKmeFQLARLdi5ax
+[2026-01-10T16:59:27.021Z] Worker error for ord_VGKmeFQLARLdi5ax: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26
+[2026-01-10T16:59:29.067Z] Worker processing order: ord_VGKmeFQLARLdi5ax
+[2026-01-10T16:59:31.486Z] Worker error for ord_VGKmeFQLARLdi5ax: Real DEX execution not implemented. Set MOCK_MODE=true
+Stack: Error: Real DEX execution not implemented. Set MOCK_MODE=true
+    at DexRouter.executeSwap (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\dexRouter.ts:127:19)
+    at async Worker.exports.orderWorker.bullmq_1.Worker.connection [as processFn] (D:\Ragx\Eternal_Backend\dex-trading-engine\src\services\orderWorker.ts:55:28)
+    at async D:\Ragx\Eternal_Backend\dex-trading-engine\node_modules\bullmq\src\classes\worker.ts:990:26

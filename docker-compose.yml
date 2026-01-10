@@ -1,0 +1,66 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: dex-postgres
+    environment:
+      POSTGRES_DB: dex_orders
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: dex-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: dex-app
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: dex_orders
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      MOCK_MODE: "true"
+      LOG_LEVEL: info
+      QUEUE_CONCURRENCY: 10
+      QUEUE_MAX_RATE: 100
+      QUEUE_MAX_RATE_DURATION: 60000
+      MAX_RETRIES: 3
+      RETRY_DELAY: 1000
+      SLIPPAGE_TOLERANCE: 0.01
+      RAYDIUM_BASE_FEE: 0.003
+      METEORA_BASE_FEE: 0.002
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:

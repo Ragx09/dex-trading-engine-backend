@@ -1,0 +1,249 @@
+{
+    "info": {
+        "name": "DEX Order Execution Engine",
+        "description": "API collection for testing the DEX Order Execution Engine with Raydium and Meteora routing",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/api/health",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "health"
+                    ]
+                },
+                "description": "Check if the API is running and healthy"
+            }
+        },
+        {
+            "name": "Get Queue Metrics",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/api/orders/metrics",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "metrics"
+                    ]
+                },
+                "description": "Get current queue status and metrics"
+            }
+        },
+        {
+            "name": "Execute Market Order - SOL to USDC",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"type\": \"market\",\n  \"tokenIn\": \"SOL\",\n  \"tokenOut\": \"USDC\",\n  \"amountIn\": 1,\n  \"slippage\": 0.01\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/orders/execute",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "execute"
+                    ]
+                },
+                "description": "Execute a market order swapping 1 SOL for USDC with 1% slippage. Note: This endpoint upgrades to WebSocket for real-time status updates."
+            }
+        },
+        {
+            "name": "Execute Market Order - USDC to SOL",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"type\": \"market\",\n  \"tokenIn\": \"USDC\",\n  \"tokenOut\": \"SOL\",\n  \"amountIn\": 100,\n  \"slippage\": 0.02\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/orders/execute",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "execute"
+                    ]
+                },
+                "description": "Execute a market order swapping 100 USDC for SOL with 2% slippage"
+            }
+        },
+        {
+            "name": "Execute Market Order - SOL to BONK",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"type\": \"market\",\n  \"tokenIn\": \"SOL\",\n  \"tokenOut\": \"BONK\",\n  \"amountIn\": 0.5,\n  \"slippage\": 0.03\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/orders/execute",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "execute"
+                    ]
+                },
+                "description": "Execute a market order swapping 0.5 SOL for BONK with 3% slippage"
+            }
+        },
+        {
+            "name": "Execute Market Order - High Slippage",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"type\": \"market\",\n  \"tokenIn\": \"SOL\",\n  \"tokenOut\": \"USDT\",\n  \"amountIn\": 5,\n  \"slippage\": 0.05\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/orders/execute",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "execute"
+                    ]
+                },
+                "description": "Execute a market order with higher slippage tolerance (5%)"
+            }
+        },
+        {
+            "name": "Invalid Order - Missing Fields",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"type\": \"market\",\n  \"tokenIn\": \"SOL\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/orders/execute",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "execute"
+                    ]
+                },
+                "description": "Test validation - missing required fields"
+            }
+        },
+        {
+            "name": "Invalid Order - Negative Amount",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"type\": \"market\",\n  \"tokenIn\": \"SOL\",\n  \"tokenOut\": \"USDC\",\n  \"amountIn\": -1,\n  \"slippage\": 0.01\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/orders/execute",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "execute"
+                    ]
+                },
+                "description": "Test validation - negative amount"
+            }
+        },
+        {
+            "name": "Invalid Order - Excessive Slippage",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"type\": \"market\",\n  \"tokenIn\": \"SOL\",\n  \"tokenOut\": \"USDC\",\n  \"amountIn\": 1,\n  \"slippage\": 1.5\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/orders/execute",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "execute"
+                    ]
+                },
+                "description": "Test validation - slippage > 100%"
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3000",
+            "type": "string"
+        }
+    ]
+}
