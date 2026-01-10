@@ -3,11 +3,11 @@
 
 A production-ready order execution engine that processes market orders with intelligent DEX routing between Raydium and Meteora, real-time WebSocket updates, and robust queue management.
 
-🔗 **Live Demo**: [Coming Soon - Deploy URL]  
-📹 **Video Demo**: [Coming Soon - YouTube Link]  
-📮 **API Collection**: [Postman Collection](./postman/DEX-Order-Engine.postman_collection.json)
+Live Demo: [Coming Soon - Deploy URL]  
+ **Video Demo**: [Coming Soon - YouTube Link]  
+ **API Collection**: [Postman Collection](./postman/DEX-Order-Engine.postman_collection.json)
 
-## 🎯 Features
+## Features
 
 - **Market Order Execution**: Immediate execution at current market price
 - **Smart DEX Routing**: Automatically compares Raydium and Meteora prices and routes to the best venue
@@ -17,7 +17,7 @@ A production-ready order execution engine that processes market orders with inte
 - **Order Persistence**: PostgreSQL for order history and post-mortem analysis
 - **Comprehensive Testing**: 10+ unit and integration tests
 
-## 📋 Order Type Selection: Market Orders
+##  Order Type Selection: Market Orders
 
 **Why Market Orders?**
 Market orders provide immediate execution at the current best available price, making them ideal for demonstrating real-time DEX routing and WebSocket status updates. They offer:
@@ -29,7 +29,7 @@ Market orders provide immediate execution at the current best available price, m
 - **Limit Orders**: Add a price monitor service that continuously compares current DEX prices against the user's target price, triggering execution when conditions are met.
 - **Sniper Orders**: Implement a token launch detector that monitors new pool creation events, then immediately executes the swap upon detection with minimal latency.
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────┐       ┌──────────────┐       ┌─────────────┐
@@ -49,7 +49,7 @@ Market orders provide immediate execution at the current best available price, m
                  └─────────────┘                            └──────────────┘
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -99,7 +99,7 @@ docker-compose logs -f app
 docker-compose down
 ```
 
-## 📡 API Usage
+##  API Usage
 
 ### Submit an Order
 
@@ -180,7 +180,7 @@ docker-compose down
 }
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
@@ -195,11 +195,11 @@ npm run test:watch
 
 ### Test Coverage
 
-- ✅ DEX Router: Quote generation, routing logic, swap execution
-- ✅ Queue Behavior: Concurrency, rate limiting, retry logic  
-- ✅ WebSocket Lifecycle: Connection, status streaming, disconnect
-- ✅ Helper Functions: ID generation, price formatting, backoff calculation
-- ✅ Event System: Emitter, listeners, cleanup
+- DEX Router: Quote generation, routing logic, swap execution
+- Queue Behavior: Concurrency, rate limiting, retry logic  
+- WebSocket Lifecycle: Connection, status streaming, disconnect
+- Helper Functions: ID generation, price formatting, backoff calculation
+- Event System: Emitter, listeners, cleanup
 
 ### Example Client Scripts
 
@@ -211,7 +211,7 @@ node examples/websocket-client.js
 node examples/test-concurrent-orders.js
 ```
 
-## 🐳 Deployment
+## Deployment
 
 ### Docker
 
@@ -231,14 +231,14 @@ docker run -p 3000:3000 --env-file .env dex-order-engine
 
 See [DEPLOYMENT.md](./docs/DEPLOYMENT.md) for detailed instructions.
 
-## 📊 Performance
+## Performance
 
 - **Concurrent Processing**: 10 orders simultaneously
 - **Throughput**: 100 orders per minute
 - **Average Execution Time**: 2-3 seconds per order
 - **Retry Strategy**: Exponential backoff, max 3 attempts
 
-## 🔧 Configuration
+## Configuration
 
 Key environment variables:
 
@@ -258,7 +258,7 @@ RAYDIUM_BASE_FEE=0.003        # 0.3% fee
 METEORA_BASE_FEE=0.002        # 0.2% fee
 ```
 
-## 📝 Project Structure
+## Project Structure
 
 ```
 dex-trading-engine/
@@ -277,7 +277,7 @@ dex-trading-engine/
 └── docker-compose.yml   # Docker services definition
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -285,15 +285,12 @@ dex-trading-engine/
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file for details
 
-## 📧 Contact
+## Contact
 
 For questions or support, please open an issue or contact [your-email@example.com]
 
----
-
-**Built with** ❤️ **using Node.js, TypeScript, Fastify, BullMQ, PostgreSQL, and Redis**
 
